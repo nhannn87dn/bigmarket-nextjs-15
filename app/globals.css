@@ -3,19 +3,153 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f8f8fc;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --main-green: #006837;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+/* Cố định chiều rộng cho Desktop Container */
+.d-container{
+  width: 1280px;
+}
+.section-main {
+  min-height: 568px;
+}
+.home-carouse .slick-arrow::before {
+  font-size: 40px !important;
+}
+
+.home-carouse .slick-dots{
+  bottom: 10px !important;
+}
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: var(--main-green) !important;
+}
+.slick-thumb {
+  height: 50px;
+  bottom: -45px !important;
+}
+.slick-thumb li {
+  height: 50px !important;
+  width: 50px !important;
+}
+.slick-thumb li.slick-active>div{
+  border: 1px solid var(--main-green);
+}
+/* product-list */
+.product-name{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 42px;
+}
+
+@layer base {
+  
+ button{
+  @apply px-3 py-2 flex justify-center rounded items-center bg-transparent border border-gray-400 hover:bg-gray-200 transition-all duration-300
+ }
+
+}
+@layer components {
+  /* button type */
+  .btn-ghost{
+    @apply border-0
+  }
+
+  /* icon type */
+ .icon-gray{
+  @apply text-gray-400
+ }
+ .text-gray{
+  @apply text-gray-500
+ }
+
+ /* Customer Link header */
+ .customer-links a{
+    @apply hover:text-primary flex gap-x-2 transition-colors duration-300
+ }
+
+ /* categories list */
+ .categories-list {
+    display: flex;
+    flex-direction: column;
+    column-gap: 5px;
+  }
+  .categories-list .cat-item a{
+      display: flex;
+      column-gap: 8px;
+  }
+  .categories-list>.cat-item{
+    border-radius: 6px;
+  }
+  .categories-list>.cat-item>a{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+  }
+  .categories-list .cat-item:hover{
+    @apply bg-gray-100
+  }
+  .categories-list .cat-item:hover>a{
+    @apply text-primary
+  }
+  .categories-list .cat-child{
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    background-color: #fff;
+    left: 220px;
+      padding: 10px 0 10px 10px;
+  }
+  .categories-list .cat-item:hover .cat-child {
+    visibility: visible;
+  }
+  .categories-list .cat-child aside{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    float: left;
+    width: 220px;
+    margin-right: 10px;
+  }
+  
+  .cat-child aside a{
+    color: #171717;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: no-wrap;
+  }
+  .cat-child aside a:first-child{
+    @apply text-primary font-bold
+  }
+  .cat-child aside a:hover{
+    @apply text-primary
+  }
+
+  
+
+}
+
+@layer utilities {
+  .line-clamp-2{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .line-clamp-3{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  
 }

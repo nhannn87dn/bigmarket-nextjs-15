@@ -1,0 +1,22 @@
+### get article
+GET https://cloud.bigmarket.vn/api/v1/articles/news HTTP/1.1
+content-type: application/json
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==
+
+### get article details
+GET https://cloud.bigmarket.vn/api/v1/articles/details/3579 HTTP/1.1
+content-type: application/json
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==
+
+
+### get articles by cate slug
+GET https://cloud.bigmarket.vn/api/v1/articles?cat_id=4&cat_slug=tin-tuc HTTP/1.1
+content-type: application/json
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==
+
+
+### get article categories
+GET https://cloud.bigmarket.vn/api/v1/articles/categories HTTP/1.1
+content-type: application/json
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==
+

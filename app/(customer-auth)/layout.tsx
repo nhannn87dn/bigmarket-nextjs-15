@@ -15,19 +15,21 @@ export const metadata: Metadata = {
   description: settings.metaDesc,
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
   
+
   return (
     <html lang={settings.langDefault}>
       <body
-        className={`${roboto.className} antialiased`}
+        className={`${roboto.className} customer-auth-layout antialiased`}
       >
         {children}
+      
       </body>
     </html>
   );

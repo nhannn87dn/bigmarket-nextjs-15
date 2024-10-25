@@ -1,0 +1,7 @@
+
+
+### get categories
+GET https://cloud.bigmarket.vn/api/v1/categories HTTP/1.1
+content-type: application/json
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==
+

@@ -1,0 +1,20 @@
+###
+
+GET https://cloud.bigmarket.vn/api/v1/products?cat_id=377 HTTP/1.1
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==
+
+
+### get products by category ID Home
+GET https://cloud.bigmarket.vn/api/v1/products/home/377/5 HTTP/1.1
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==
+
+
+### dettail
+
+GET https://cloud.bigmarket.vn/api/v1/products/details/16047 HTTP/1.1
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==
+
+
+### search
+GET https://cloud.bigmarket.vn/api/v1/search/?keywords=gà+ta HTTP/1.1
+X-API-Key: OWt5Q0hGUXRLdXhSOWhPWkJUUjRuNU1Tb0lhdEM5UW1vYjJwMkx5SXBINTJ3ajZJdzFvbmFIRjNndkhmQisyQQ==

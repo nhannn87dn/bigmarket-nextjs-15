@@ -11,6 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        /* Cấu hình màu tùy chỉnh dùng chung */
+        primary: '#006837', //bg-primary
+        secondary: '#015c31',  //bg-secondary
+        price: '#be1e2d',
+        graytext: '#82869e',
+        grayborder: '#e0e0e0'
       },
     },
   },
