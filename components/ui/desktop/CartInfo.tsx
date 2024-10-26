@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const CartInfo = () => {
@@ -27,22 +28,22 @@ const CartInfo = () => {
       <ul className="mt-4 text-[12px]">
         <li className="flex justify-between items-center mb-2">
           <div className="flex items-center">
-            <img src="https://via.placeholder.com/50" alt="Product 1" className="w-12 h-12 rounded mr-2" />
+            <Image priority={true} height={50} width={50} src="https://via.placeholder.com/50" alt="Product 1" className="w-12 h-12 rounded mr-2" />
             <span className="text-gray-700">Sản phẩm 1</span>
           </div>
           <span className="text-gray-900 font-semibold">$10.00</span>
         </li>
         <li className="flex justify-between items-center mb-2">
           <div className="flex items-center">
-            <img src="https://via.placeholder.com/50" alt="Product 2" className="w-12 h-12 rounded mr-2" />
-            <span className="text-gray-700">Sản phẩm 2</span>
+          <Image priority={true} height={50} width={50} src="https://via.placeholder.com/50" alt="Product 1" className="w-12 h-12 rounded mr-2" />
+          <span className="text-gray-700">Sản phẩm 2</span>
           </div>
           <span className="text-gray-900 font-semibold">$15.00</span>
         </li>
         <li className="flex justify-between items-center mb-2">
           <div className="flex items-center">
-            <img src="https://via.placeholder.com/50" alt="Product 3" className="w-12 h-12 rounded mr-2" />
-            <span className="text-gray-700">Sản phẩm 3</span>
+          <Image priority={true} height={50} width={50} src="https://via.placeholder.com/50" alt="Product 1" className="w-12 h-12 rounded mr-2" />
+          <span className="text-gray-700">Sản phẩm 3</span>
           </div>
           <span className="text-gray-900 font-semibold">$8.00</span>
         </li>

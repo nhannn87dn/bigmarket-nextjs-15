@@ -16,6 +16,7 @@ const CustomLink = React.forwardRef<HTMLAnchorElement, TCustomLink>(({label, onC
     </a>
   )
 })
+CustomLink.displayName = 'CustomLink';
 
 const HeaderTopNavigation = async () => {
   const topNavigation = await getNavigationByPosition('top');
