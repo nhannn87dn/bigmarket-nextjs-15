@@ -1,7 +1,9 @@
-import React from "react";
-import { TProduct } from "./ProductsList/type";
+import { TProductBase } from "@/constants/APIEndpoints/products";
 
-export default function ButtonAddToCart({data}: {data: TProduct}) {
+
+
+export default function ButtonAddToCart({data}: {data: TProductBase}) {
+  console.log(data);
   return (
     <div className="product-action flex justify-center mt-3">
       <button

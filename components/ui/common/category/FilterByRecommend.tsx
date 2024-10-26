@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { TCategoryRequest } from "./type";
 
 /* Tạo liên kết giảm giá */
 export  const FilterByPromotionPrice = (
     {currentRecommended,
       queryString
     }: {
-      currentRecommended: TCategoryRequest["searchParams"]["rc"];
+      currentRecommended: "moi-ve" | "ban-chay" | "noi-bat" | "giam-gia" | undefined;
       queryString: string;
     }
   ) => {
@@ -50,7 +49,7 @@ export const FilterByBanChay = (
     {currentRecommended,
       queryString
     }: {
-      currentRecommended: TCategoryRequest["searchParams"]["rc"];
+      currentRecommended: "moi-ve" | "ban-chay" | "noi-bat" | "giam-gia" | undefined;
       queryString: string;
     }
   ) => {
