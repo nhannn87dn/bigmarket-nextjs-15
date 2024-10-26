@@ -1,11 +1,12 @@
 import SearchPageDesktop from "@/components/ui/desktop/SearchPageDesktop";
+import SearchPageDesktopLoading from "@/components/ui/desktop/SearchPageDesktop/SearchPageDesktopLoading";
 import { Suspense } from "react";
 
-const SearchPage = async (props: {searchParams: Promise<{keyword: string}>}) => {
+const SearchPage = async (props: {searchParams: Promise<{q: string}>}) => {
   const searchParams = await props.searchParams;
-  const keyword = searchParams.keyword || '';
+  const keyword = searchParams.q || '';
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<SearchPageDesktopLoading />}>
       <SearchPageDesktop keyword={keyword} />
     </Suspense>
   )

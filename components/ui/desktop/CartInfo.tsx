@@ -23,7 +23,7 @@ const CartInfo = () => {
           <br />(<strong>0</strong>) sản phẩm
         </span>
       </div>
-      <div className="cart-list absolute right-0 top-[40px] w-[250px] shadow-lg p-2 backdrop-blur-md bg-white/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
+      <div className="cart-list absolute z-50 right-0 top-[40px] w-[250px] shadow-lg p-2 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
       <ul className="mt-4 text-[12px]">
         <li className="flex justify-between items-center mb-2">
           <div className="flex items-center">

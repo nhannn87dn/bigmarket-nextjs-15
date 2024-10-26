@@ -2,19 +2,19 @@ import Alert from "@/components/ui/common/Alert";
 import LogoDesktop from "@/components/ui/desktop/LogoDesktop";
 import Link from "next/link";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center">
         <LogoDesktop className="flex flex-col justify-center" />
         <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Đăng ký thành viên
+          Đăng nhập thành viên
         </h2>
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-4">
-          <div className="form-input">
+        <form className="space-y-6">
+          <div>
             <label
               htmlFor="email"
               className="block text-sm font-medium leading-6 text-gray-900"
@@ -26,7 +26,7 @@ export default function RegisterPage() {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="Vui lòng nhập email của bạn"
+                placeholder="Nhập email của bạn"
                 required
                 autoComplete="email"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
@@ -34,57 +34,31 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          <div className="form-input">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium leading-6 text-gray-900"
-            >
-              Password
-            </label>
+          <div>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Password
+              </label>
+              <div className="text-sm">
+                <Link
+                  href="/forget-password"
+                  className="font-semibold text-primary hover:text-secondary"
+                >
+                  Quên mật khẩu ?
+                </Link>
+              </div>
+            </div>
             <div className="mt-2">
               <input
                 id="password"
                 name="password"
                 type="password"
+                placeholder="Nhập mật khẩu của bạn"
                 required
                 autoComplete="current-password"
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-          <div className="form-input">
-            <label
-              htmlFor="password_confirm"
-              className="block text-sm font-medium leading-6 text-gray-900"
-            >
-              Password Confirm
-            </label>
-            <div className="mt-2">
-              <input
-                id="password_confirm"
-                name="password_confirm"
-                type="password"
-                required
-                autoComplete="off"
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-          <div className="form-input">
-            <label
-              htmlFor="mobile"
-              className="block text-sm font-medium leading-6 text-gray-900"
-            >
-              Mobile
-            </label>
-            <div className="mt-2">
-              <input
-                id="mobile"
-                name="mobile"
-                type="mobile"
-                placeholder="Số điện thoại của bạn"
-                required
-                autoComplete="current-mobile"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
               />
             </div>
@@ -92,7 +66,7 @@ export default function RegisterPage() {
 
           <div className="flex flex-col">
             <button type="submit" className="btn-primary">
-              Đăng ký
+              Đăng nhập
             </button>
             <Alert
               type="success"
@@ -150,12 +124,12 @@ export default function RegisterPage() {
           </button>
         </div>
         <p className="mt-10 text-center text-sm text-gray-500">
-          Bạn đã có tài khoản rồi {" "}
+          Bạn chưa có tài khoản ?{" "}
           <Link
-            href="/login"
+            href="/register"
             className="font-semibold leading-6 text-primary hover:text-secondary"
           >
-            Đăng nhập tại đây
+            Đăng ký ngay !
           </Link>
         </p>
       </div>

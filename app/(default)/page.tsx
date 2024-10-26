@@ -16,6 +16,18 @@ export const metadata = {
   ...metaDataBase,
   title: settings.metaTitle,
   description: settings.metaDesc,
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 }
 
 export default function HomePage() {

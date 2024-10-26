@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const CustomerAuth = () => {
+  const isAuthenticated = false;
   return (
     <div className="customer-auth flex items-center relative group h-[40px]">
       <div className="customer-info flex gap-x-[8px] items-center cursor-pointer">
@@ -20,12 +21,24 @@ const CustomerAuth = () => {
             />
           </svg>
         </div>
-        <div className="customer-info text-sm text-gray-500 overflow-hidden">
-          <p className="customer-name font-bold">Nguyễn Văn A</p>
-          <p className="customer-email">nguyenvana@gmail.com</p>
+        <div className="customer-info text-sm text-gray-500 overflow-hidden flex flex-col">
+          {
+            !isAuthenticated ? (
+              <>
+              <Link href={`/login`} className="hover:text-primary">Đăng nhập</Link>
+              <Link href={`/register`} className="hover:text-primary">Đăng ký</Link>
+              </>
+            ) : (
+              <>
+              <p className="customer-name font-bold">Nguyễn Văn A</p>
+                <p className="customer-email">nguyenvana@gmail.com</p>
+              </>
+            )
+          }
+          
         </div>
       </div>
-      <div className="customer-links absolute left-0 top-[40px] w-[220px] shadow-lg p-4 backdrop-blur-md bg-white/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
+      <div className="customer-links absolute z-50 left-0 top-[40px] w-[220px] shadow-lg rounded-b-l rounded b-r p-4 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
         <div className="customer-links-inner flex flex-col gap-y-2 text-[14px]">
           <Link href={"customer"}>
             <svg

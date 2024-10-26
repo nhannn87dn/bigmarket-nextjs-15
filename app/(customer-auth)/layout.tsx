@@ -26,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang={settings.langDefault}>
       <body
-        className={`${roboto.className} customer-auth-layout antialiased`}
+        className={`${roboto.className} antialiased`}
       >
+        <main className="max-w-4xl mx-auto">
         {children}
+        </main>
       
       </body>
     </html>

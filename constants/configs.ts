@@ -11,5 +11,5 @@ export const globalConfig = {
   BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_URL || '',
   BACKEND_CDN: process.env.NEXT_PUBLIC_BACKEND_CDN || '',
   BACKEND_X_API_KEY: process.env.BACKEND_X_API_KEY || '',
- 
+  APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
 }

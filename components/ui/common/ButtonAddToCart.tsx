@@ -6,7 +6,7 @@ export default function ButtonAddToCart({data}: {data: TProduct}) {
     <div className="product-action flex justify-center mt-3">
       <button
         type="button"
-        className="btn-primary border-primary text-primary w-full gap-x-[8px]"
+        className="border-primary text-primary w-full gap-x-[8px]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,5 @@
 import fetchApi from "@/utils/fetchClientInstance";
-import { TECShopPager, TResponseBase } from "../types";
+import { TECShopPager, TMetaData, TResponseBase } from "../types";
 
 export const productsEndpoints = {
     products: {
@@ -84,6 +84,7 @@ export const getProductByCateHome = async ({catId, limit = 4}: {catId: number, l
 /* Danh sách sản phẩm */
 
 export interface TProductByCate {
+    metaData: TMetaData & {cat_name: string};
     filter_prices: {
       id: number;
       url: string;
@@ -120,6 +121,8 @@ export interface TProductByCate {
         cat_name: string;
         custom_name: string;
         cat_thumb: string;
+        url: string;
+        first_param: string;
     },
     //query: {}
 }
@@ -157,6 +160,7 @@ export interface TProductDetails extends TProductBase {
     key: string;
     val: string;
   }[],
+  metaData: TMetaData
 }
 
 export interface TProductDetailsResponse extends TResponseBase{

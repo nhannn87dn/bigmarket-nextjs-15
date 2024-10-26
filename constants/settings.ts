@@ -1,3 +1,5 @@
+import { globalConfig } from "./configs";
+
 /**
  * Thông tin cấu hình thiết lập trong dashboard  cửa hàng
  */
@@ -18,6 +20,7 @@ export const settings = {
     taxCode: '123456789',
     metaDataBaseField: {
         generator: applicationName,
+        metadataBase: new URL(globalConfig.APP_URL),
         applicationName: applicationName,
         referrer: 'origin-when-cross-origin',
         authors: [{ name: 'Ngọc nhân', url: 'https://ecshopvietnam.com' }],

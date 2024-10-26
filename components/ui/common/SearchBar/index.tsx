@@ -1,37 +1,42 @@
 'use client'
-import { useFormStatus } from 'react-dom'
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 import Link from 'next/link';
 
 
 const SearchBar = () => {
-  const { pending } = useFormStatus();
   const [isFocus, setIsFocus] = useState(false);
+  const [keyword, setKeyword] = useState('');
+  const router = useRouter();
 
   return (
     <div onMouseLeave={()=>{
       setIsFocus(false)
     }} className="search-form relative h-[40px] w-[420px]">
-      <form action={async (formData: FormData)=>{
-        const keyword =  formData.get('keyword') as string || '';
-        if(keyword !== ''){
-          redirect(`/tim-kiem?keyword=${encodeURIComponent(keyword).replace(/%20/g, '+')}`)
-        }
+      <form onSubmit={(e)=>{
+          e.preventDefault();
+
+          if(keyword !== ''){
+            router.push(`/tim-kiem?q=${encodeURIComponent(keyword).replace(/%20/g, '+')}`)
+          }
       }} className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary sm:max-w-md">
         <input
+        onChange={(e)=>{
+          setKeyword(e.target.value)
+        }}
         onFocus={()=>{
           setIsFocus(true)
         }}
+        value={keyword}
         
           type="text"
           name="keyword"
           id="keyword"
-          className="block flex-1 border-0 bg-transparent py-2 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 outline-none"
+          className="border-0 bg-transparent shadow-none ring-0 py-2 px-3 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 outline-none"
           placeholder="Tìm kiếm sản phẩm ..."
           autoComplete='off'
         />
-        <button disabled={pending} type="submit" className="px-2 btn-ghost hover:bg-transparent">
+        <button type="submit" className="px-2 btn-ghost hover:bg-transparent">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

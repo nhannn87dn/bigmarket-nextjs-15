@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { globalConfig } from "@/constants/configs";
+import { settings } from "@/constants/settings";
 
-const Logo = () => {
+const LogoDesktop = ({className=''}: {className?: string}) => {
   return (
-    <Link href="/">
+    <Link className={className} href="/">
       <Image
+      className="mx-auto"
         src={`${globalConfig.BACKEND_CDN}upload/files/profile/logo.png`}
-        alt="BigMarket Logo"
+        alt={settings.siteName}
         width={220}
         height={50}
         priority={true}
@@ -16,4 +18,4 @@ const Logo = () => {
   );
 };
 
-export default Logo;
+export default LogoDesktop;
